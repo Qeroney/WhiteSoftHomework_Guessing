@@ -1,9 +1,8 @@
 package org.example.service;
 
 public interface GuessingService {
-    int randomNumbers(int max);
+    int randomNumbers(int min, int max);
 
-    void startGuess();
-
-    void tips(int number, int rand);
+    Boolean startGuessing();
+    void askToPlay();
 }
