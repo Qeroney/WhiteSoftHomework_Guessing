@@ -1,8 +1,8 @@
 package org.example.model;
 
 public enum Value {
-    MIN(1),
-    MAX(10);
+    MIN_VALUE(1),
+    MAX_VALUE(10);
 
     private final int value;
 

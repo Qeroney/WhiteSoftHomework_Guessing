@@ -8,8 +8,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessingServiceImpl implements GuessingService {
-    private final int MAX = Value.MAX.getValue();
-    private final int MIN = Value.MIN.getValue();
+    private final int MAX = Value.MAX_VALUE.getValue();
+    private final int MIN = Value.MIN_VALUE.getValue();
     private final Random random;
     private final Scanner scanner;
     private final AdviceProvider tips;
@@ -45,20 +45,22 @@ public class GuessingServiceImpl implements GuessingService {
     }
 
     @Override
-    public Boolean startGuessing() {
+    public boolean startGuessing() {
         System.out.println("Привет!\nБудешь угадывать? (да/нет)");
 
         while (true) {
             String answer = scanner.nextLine().toLowerCase();
 
-            if (answer.equals("нет")) {
-                System.out.println("(¬_¬ )");
-                return false;
-            } else if (answer.equals("да")) {
-                System.out.println("(⌒‿⌒)");
-                askToPlay();
-            } else {
-                System.out.println("Некорректный ответ. Попробуйте снова.");
+            switch (answer) {
+                case "нет":
+                    System.out.println("(¬_¬ )");
+                    return false;
+                case "да":
+                    System.out.println("(⌒‿⌒)");
+                    askToPlay();
+                    continue;
+                default:
+                    System.out.println("Некорректный ответ. Попробуйте снова.");
             }
         }
     }
