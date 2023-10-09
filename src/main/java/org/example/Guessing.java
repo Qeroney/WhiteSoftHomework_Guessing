@@ -11,7 +11,7 @@ public class Guessing {
 
         GameController game = new GameController();
 
-        game.start();
+        game.startGuessing();
 
     }
 }
