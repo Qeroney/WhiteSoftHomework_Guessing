@@ -1,13 +1,24 @@
 package org.example.sout;
 
 public interface GameInteraction {
+
+    void printFreeze();
+
+    void printWarm();
+
+    void printHot();
+
+    void playAgain();
+
     void printGuessNumberPrompt();
 
     void greeting();
 
     int getUserInput();
 
-    void playAgain();
+    String getStringInput();
+
+    void startPlay();
 
     void success();
 

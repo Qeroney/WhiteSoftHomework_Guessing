@@ -1,6 +1,11 @@
 package org.example.tips;
 
+import org.example.sout.GameInteraction;
+import org.example.sout.UserInteraction;
+
 public class GameAdvice implements AdviceProvider {
+
+    private final GameInteraction userInteraction = new UserInteraction();
 
     int hotUpperBound = 5;
     int warmUpperBound = 2;
@@ -10,13 +15,13 @@ public class GameAdvice implements AdviceProvider {
         int diff = Math.abs(number - target);
 
         if (diff > hotUpperBound) {
-            System.out.println("Холодно");
+            userInteraction.printFreeze();
 
         } else if (diff > warmUpperBound) {
-            System.out.println("Тепло");
+            userInteraction.printWarm();
 
         } else {
-            System.out.println("Жгётся!");
+            userInteraction.printHot();
         }
     }
 }

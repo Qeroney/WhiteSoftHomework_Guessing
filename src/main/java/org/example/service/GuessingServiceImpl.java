@@ -35,6 +35,7 @@ public class GuessingServiceImpl implements GuessingService {
 
             if (number == target) {
                 userInteraction.success();
+                userInteraction.playAgain();
                 break;
             } else {
                 tips.provideAdviceToUser(number, target);
